@@ -1,8 +1,8 @@
 syntax on
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -17,15 +17,28 @@ Plugin 'gmarik/Vundle.vim'
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
 " plugin from http://vim-scripts.org/vim/scripts.html
+Plugin 'L9'
+" Git plugin not hosted on GitHub
 Plugin 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (i.e. when working on your own plugin)
+Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Avoid a name conflict with L9
+Plugin 'exvim/ex-autocomplpop'
+Plugin 'Shougo/neocomplcache.vim'
 Plugin 'bling/vim-airline'
+Plugin 'kien/ctrlp.vim'
 Plugin 'mbbill/undotree'
 Plugin 'scrooloose/nerdtree'
-Plugin 'mhinz/vim-signify'
-
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/syntastic'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'sickill/vim-monokai'
+Plugin 'Yggdroot/indentLine'
+Plugin 'ntpeters/vim-better-whitespace'
+"Lokaltog/vim-easymotion
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -41,10 +54,14 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 "
-"
-set noexpandtab
-set copyindent
-set preserveindent
-set softtabstop=0
-set shiftwidth=4
+let g:airline#extensions#tabline#enabled=1
+let g:airline_powerline_fonts = 1
+
+
 set tabstop=4
+set shiftwidth=4
+set expandtab
+let g:indentLine_char = '┆'
+let g:indentLine_color_term=239
+
+autocmd FileType sql set syntax=sql
