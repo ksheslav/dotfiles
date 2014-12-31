@@ -38,6 +38,7 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'sickill/vim-monokai'
 Plugin 'Yggdroot/indentLine'
 Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'Lokaltog/vim-easymotion'
 "Lokaltog/vim-easymotion
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -65,3 +66,10 @@ let g:indentLine_char = '┆'
 let g:indentLine_color_term=239
 
 autocmd FileType sql set syntax=sql
+
+colorscheme solarized
+set background=dark
+
+let mapleader=","
+set autoread
+map <Leader>w :w!<cr>
