@@ -1,5 +1,4 @@
 syntax on
-
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -72,4 +71,14 @@ set background=dark
 
 let mapleader=","
 set autoread
+"quicksave
 map <Leader>w :w!<cr>
+"nextbuffer
+map <Leader>l :bnext<cr>
+"prevbuffer
+map <Leader>h :bprevious<cr>
+let g:ctrlp_map = '<c-p>'
+
+inoremap jj <Esc>
+map <Leader>u :UndotreeToggle<cr>
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
