@@ -1,7 +1,9 @@
 syntax on
+colorscheme solarized
 set nocompatible              " be iMproved, required
-filetype off                  " required
-
+filetype on                  " required
+filetype indent on
+filetype plugin on
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -11,12 +13,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-Plugin 'L9'
+" The following are examples of different formats supported.  " Keep Plugin commands between vundle#begin/end.  " plugin on GitHub repo Plugin 'tpope/vim-fugitive' " plugin from http://vim-scripts.org/vim/scripts.html Plugin 'L9'
 " Git plugin not hosted on GitHub
 Plugin 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (i.e. when working on your own plugin)
@@ -25,6 +22,7 @@ Plugin 'file:///home/gmarik/path/to/plugin'
 " Pass the path to set the runtimepath properly.
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Avoid a name conflict with L9
+
 Plugin 'exvim/ex-autocomplpop'
 Plugin 'Shougo/neocomplcache.vim'
 Plugin 'bling/vim-airline'
@@ -38,6 +36,11 @@ Plugin 'sickill/vim-monokai'
 Plugin 'Yggdroot/indentLine'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'Lokaltog/vim-easymotion'
+Plugin 'fishman/ctags'
+Plugin 'jnurmine/Zenburn'
+Plugin 'jmahler/hla.vim'
+Plugin 'junegunn/goyo.vim'
+Plugin 'junegunn/limelight.vim'
 "Lokaltog/vim-easymotion
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -66,10 +69,9 @@ let g:indentLine_color_term=239
 
 autocmd FileType sql set syntax=sql
 
-colorscheme solarized
 set background=dark
 
-let mapleader=","
+let mapleader="\<Space>"
 set autoread
 "quicksave
 map <Leader>w :w!<cr>
@@ -82,3 +84,10 @@ let g:ctrlp_map = '<c-p>'
 inoremap jj <Esc>
 map <Leader>u :UndotreeToggle<cr>
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+let g:limelight_conceal_ctermfg = 'gray'
+let g:goyo_linenr =1
+autocmd User GoyoEnter Limelight
+autocmd User GoyoLeave Limelight!
+map <Leader><Leader>g :Goyo<cr>
+map <Leader><Leader>Q :q<cr>
