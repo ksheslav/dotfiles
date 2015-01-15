@@ -87,7 +87,10 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 let g:limelight_conceal_ctermfg = 'gray'
 let g:goyo_linenr =1
+let g:goyo_width=160
 autocmd User GoyoEnter Limelight
 autocmd User GoyoLeave Limelight!
 map <Leader><Leader>g :Goyo<cr>
 map <Leader><Leader>Q :q<cr>
+
+set scrolloff=10
