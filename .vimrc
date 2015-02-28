@@ -1,3 +1,4 @@
+set t_Co=256
 syntax on
 colorscheme solarized
 set nocompatible              " be iMproved, required
@@ -41,6 +42,8 @@ Plugin 'jnurmine/Zenburn'
 Plugin 'jmahler/hla.vim'
 Plugin 'junegunn/goyo.vim'
 Plugin 'junegunn/limelight.vim'
+Plugin 'jplaut/vim-arduino-ino'
+
 "Lokaltog/vim-easymotion
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
