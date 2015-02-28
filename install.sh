@@ -6,6 +6,7 @@ sudo git clone https://github.com/Anthony25/gnome-terminal-colors-solarized.git
 sudo git clone https://github.com/powerline/fonts.git
 ./fonts/install.sh
 ./gnome-terminal-colors-solarized/install.sh
+sudo mv $path".vim/bundle/vim-colorschemes/colors" $path".vim/"
 sudo git clone https://github.com/gmarik/Vundle.vim.git
 sudo mv Vundle.vim .vim/bundle/
 vim +PluginInstall +qall
